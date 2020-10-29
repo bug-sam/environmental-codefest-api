@@ -10,6 +10,7 @@ class Config:
 class DevConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'environmental_codefest.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class TestConfig(Config):
