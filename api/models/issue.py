@@ -1,4 +1,5 @@
-from api import db
+from api.app import db
+
 
 class Issue(db.Model):
 
