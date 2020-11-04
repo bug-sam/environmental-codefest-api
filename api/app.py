@@ -7,7 +7,6 @@ from api.config import config_by_name
 from api.controllers import api
 
 
-
 def create_app(config_name):
     # create app
     app = Flask(__name__)

@@ -2,7 +2,7 @@ import os
 
 from flask_script import Manager
 
-from api import create_app
+from api import create_app, db
 
 
 app = create_app(os.getenv("ENV", "dev"))

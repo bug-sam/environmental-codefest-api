@@ -2,10 +2,11 @@ from api.app import db
 from api.models.issue import Issue
 
 
-def save_new_issue(title, preview, message, sources):
-    issue = Issue(title=title, preview=preview, message=message, sources=sources)
+def save_new_issue(issuejson):
+    issue = Issue(**issuejson)
     db.session.add(issue)
     db.session.commit()
+    return issue
 
 
 def get_all_issues():
