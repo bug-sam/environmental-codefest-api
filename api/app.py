@@ -1,11 +1,11 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+db = SQLAlchemy()
+
 from api.config import config_by_name
 from api.controllers import api
 
-
-db = SQLAlchemy()
 
 def create_app(config_name):
     # create app
