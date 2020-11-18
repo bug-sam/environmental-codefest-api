@@ -11,11 +11,11 @@ api = Namespace("email")
 api_key = os.getenv("API_KEY")
 url = 'https://www.googleapis.com/civicinfo/v2/representatives'
 
-@api.route("/email")
+@api.route("/<int:zip>")
 class emailStuff(Resource):
 
-    def get(self):
-        response = requests.get(url+"?address=19104&key="+api_key)
+    def get(self,zip):
+        response = requests.get(f"{url}?address={zip}&key={api_key}")
         return response.json()
 
 
