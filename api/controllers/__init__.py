@@ -1,5 +1,6 @@
 from flask_restx import Api
 from api.controllers.issueController import api as ic
+from api.controllers.emailController import api as ec 
 
 api = Api(
     title='environmental-codefest-api',
@@ -8,3 +9,4 @@ api = Api(
 )
 
 api.add_namespace(ic)
+api.add_namespace(ec)
