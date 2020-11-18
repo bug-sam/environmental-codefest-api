@@ -10,6 +10,11 @@ install:
 	pip install -r requirements.txt; \
 	python manage.py initialize_database
 
+remake-test-db:
+	rm ./api/environmental_codefest.db; \
+	python manage.py initialize_database; \
+	sqlite3 ./api/environmental_codefest.db < ./scripts/test_db.sql
+
 install-windows:
 	virtualenv venv; \
 	. venv/Scripts/activate.bat; \
