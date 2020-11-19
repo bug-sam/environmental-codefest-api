@@ -10,6 +10,7 @@ class Issue(db.Model):
     preview = db.Column(db.String(1024), nullable=False)
     message = db.Column(db.String(8192), nullable=False)
     sources = db.Column(db.String(255), nullable=False)
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
 
     def __repr__(self):
         return "<User '{}'>".format(self.title)
@@ -20,5 +21,6 @@ class Issue(db.Model):
             "title": self.title,
             "preview": self.preview,
             "message": self.message,
-            "sources": self.sources
+            "sources": self.sources,
+            "created_at": self.created_at.isoformat()
         }
